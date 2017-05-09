@@ -6,6 +6,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import model.DomainException;
+import model.LijnStuk;
+import model.Punt;
+
 public class LijnStukTest {
 	private Punt punt1 = new Punt(10, 20);
 	private Punt zelfdeAlsPunt1 = new Punt(10, 20);
@@ -35,6 +39,12 @@ public class LijnStukTest {
 		LijnStuk lijnStuk = new LijnStuk(punt1, punt2);
 		LijnStuk zelfdeLijnStuk = new LijnStuk(zelfdeAlsPunt1, zelfdeAlsPunt2);
 		assertTrue(lijnStuk.equals(zelfdeLijnStuk));
+	}
+	
+	@Test
+	public void equals_moet_fales_teruggeven_als_parameter_geen_Lijnstuk_is(){
+		LijnStuk lijnstuk = new LijnStuk(punt1, punt2);
+		assertFalse(lijnstuk.equals(punt1));
 	}
 	
 	@Test
