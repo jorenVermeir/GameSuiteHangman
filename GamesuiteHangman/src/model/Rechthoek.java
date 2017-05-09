@@ -1,6 +1,6 @@
 package model;
 
-public class Rechthoek {
+public class Rechthoek{
 private int breedte;
 private int hoogte;
 private Punt linkerBovenhoek;

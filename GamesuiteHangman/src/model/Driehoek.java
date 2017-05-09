@@ -43,7 +43,6 @@ public class Driehoek {
 			}
 		}
 		return gelijk;
-	
 	}
 	
 	public String toString(){
