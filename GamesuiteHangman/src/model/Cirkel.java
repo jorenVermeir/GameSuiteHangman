@@ -1,6 +1,6 @@
 package model;
 
-public class Cirkel {
+public class Cirkel extends Vorm{
 	private Punt middelPunt;
 	private int radius;
 	
@@ -31,13 +31,14 @@ public class Cirkel {
 		boolean gelijk = false;
 		if (o instanceof Cirkel){
 			Cirkel cirkel = (Cirkel)o;
-			if(this.getMiddelPunt() == cirkel.getMiddelPunt() && this.getRadius() == cirkel.getRadius()){
+			if(super.equals(cirkel) && this.getMiddelPunt() == cirkel.getMiddelPunt() && this.getRadius() == cirkel.getRadius()){
 				gelijk = true;
 			}
 		}
 		return gelijk;
 	}
 	
+	@Override
 	public String toString(){
 		String output = "Cirkel: middelPunt: (" + middelPunt.getX() + ", " + middelPunt.getY() 
 						+ ") - straal: " + radius;

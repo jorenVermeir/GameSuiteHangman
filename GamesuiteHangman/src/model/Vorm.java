@@ -9,5 +9,9 @@ public abstract class Vorm {
 		}
 		return false;
 	}
+	public String toString(){
+		return "Vorm: ";
+	}
+	
 	abstract public String getOmhullende();
 }
