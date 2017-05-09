@@ -1,7 +1,9 @@
 package domain;
 
 import static org.junit.Assert.*;
-
+import model.Driehoek;
+import model.Punt;
+import model.DomainException;
 import org.junit.Test;
 
 public class DriehoekTest {
@@ -66,4 +68,15 @@ public class DriehoekTest {
 		assertFalse(drieHoek.equals(null));
 	}
 
+	@Test
+	public void de_hoekpunten_mogen_niet_samenvallen(){
+		Driehoek driehoek= new Driehoek (punt1, punt2,punt3);
+		assertFalse(punt1 == punt2 && punt2 == punt3 && punt3==punt1);
+	}
+	
+	@Test
+	public void de_hoekpunten_mogen_niet_op_1_lijn_liggen(){
+		Driehoek driehoek = new Driehoek(punt1, punt2, punt3);
+		assertFalse ((driehoek.getHoekPunt2().getX()-driehoek.getHoekPunt2().getX())* (driehoek.getHoekPunt3().getY()-driehoek.getHoekPunt1().getY()) == (driehoek.getHoekPunt3().getX()- driehoek.getHoekPunt1().getX()) * (driehoek.getHoekPunt2().getY()-driehoek.getHoekPunt1().getY()));
+	}
 }
