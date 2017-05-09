@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.JOptionPane;
 
-import domain.Speler;
+import model.Speler;
 
 public class Launcher {
 
