@@ -1,6 +1,6 @@
 package model;
 
-public class Rechthoek {
+public class Rechthoek extends Vorm{
 private int breedte;
 private int hoogte;
 private Punt linkerBovenhoek;
@@ -42,7 +42,7 @@ private void setHoogte(int hoogte) {
 public boolean equals(Object object){
 	if (object instanceof Rechthoek) {
 		 Rechthoek rechthoek = (Rechthoek) object;
-		if (rechthoek.getBreedte() == getBreedte() && rechthoek.getHoogte() == getHoogte() && rechthoek.getLinkerBovenhoek() == getLinkerBovenhoek()) {
+		if (super.equals(rechthoek) && rechthoek.getBreedte() == getBreedte() && rechthoek.getHoogte() == getHoogte() && rechthoek.getLinkerBovenhoek() == getLinkerBovenhoek()) {
 			return true;
 			}
 		}

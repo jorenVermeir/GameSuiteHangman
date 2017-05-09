@@ -46,6 +46,7 @@ public class Driehoek {
 	
 	}
 	
+	@Override
 	public String toString(){
 		return "Driehoek: hoekpunt1" + getHoekPunt1() + " - hoekpunt2" + getHoekPunt2() + " + hoekpunt3" + getHoekPunt3();
 	}
