@@ -35,11 +35,11 @@ public class Speler {
 		this.score = score;
 	}
 
-	public int addToScore(int score) {
+	public void addToScore(int score) {
 		if ((this.getScore() + score)<0){
 			throw new DomainException("totaalscore mag niet negatief zijn");
 		}
-		return this.getScore() + score;
+		setScore(this.getScore() + score);
 	}
 
 	public String toString() {
