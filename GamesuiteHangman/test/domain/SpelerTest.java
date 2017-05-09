@@ -1,5 +1,6 @@
 package domain;
 import model.Speler;
+import model.DomainException;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
