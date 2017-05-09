@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import model.Omhullende;
+import model.Punt;
+import model.DomainException;
 public class OmhullendeTest {
 
 	private Punt linkerBovenhoek;
@@ -26,7 +29,13 @@ public class OmhullendeTest {
 		assertEquals(hoogte, omhullende.getHoogte());
 		assertEquals(breedte, omhullende.getBreedte());
 	}
-	
+	@Test
+	public void Omhullende_Juiste_Maxima(){
+		Omhullende omhullende = new Omhullende(linkerBovenhoek, breedte, hoogte);
+		assertEquals(220, omhullende.getMaxX());
+		assertEquals(240, omhullende.getMaxY());
+		
+	}
 	@Test (expected = DomainException.class)
 	public void Omhullende_Moet_exception_gooien_als_linkerbovenhoek_null()  {
 		new Omhullende(null, breedte, hoogte);
