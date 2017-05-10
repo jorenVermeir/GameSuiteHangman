@@ -98,4 +98,6 @@ public class Driehoek extends Vorm{
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
 		return omhullende.toString();
 	}
+
+
 }

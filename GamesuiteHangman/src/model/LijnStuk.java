@@ -1,6 +1,6 @@
 package model;
 
-public class LijnStuk extends Vorm{
+public class LijnStuk extends Vorm {
 	
 	private Punt startPunt;
 	private Punt eindPunt;
@@ -79,5 +79,7 @@ public class LijnStuk extends Vorm{
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
 		return omhullende.toString();
 	}
+
+
 	
 }

@@ -1,6 +1,6 @@
 package model;
 
-public class Cirkel extends Vorm{
+public class Cirkel extends Vorm {
 	private Punt middelPunt;
 	private int radius;
 	
@@ -58,4 +58,6 @@ public class Cirkel extends Vorm{
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
 		return omhullende.toString();
 	}
+
+	
 }

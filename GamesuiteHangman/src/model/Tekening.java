@@ -1,15 +1,15 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Tekening {
 
 	private String naam;
-	private int MIN_X = 0;
-	private int MIN_Y = 0;
-	private int MAX_X = 399;
-	private int MAX_Y = 399;
-	ArrayList <Vorm> vormen = new ArrayList<Vorm>();
+	private int MIN_X;
+	private int MIN_Y;
+	private int MAX_X;
+	private int MAX_Y;
+	List <Vorm> vormen = new ArrayList<Vorm>();
 	
 	public Tekening( String naam){
 		setNaam(naam);
@@ -17,7 +17,7 @@ public class Tekening {
 
 	private void setNaam(String naam) {
 		if(naam== null || naam.trim().isEmpty() ){
-			throw new DomainException("De naam is leeg.");
+			throw new IllegalArgumentException("De naam is leeg.");
 		}
 		this.naam = naam;
 		
@@ -38,6 +38,9 @@ public class Tekening {
 	}
 	
 	public Vorm getVorm(int index){
+		if(index > vormen.size() -1 || index < 0){
+			throw new DomainException("ongeldige index");
+		}
 		return vormen.get(index);
 	}
 	
@@ -46,7 +49,12 @@ public class Tekening {
 	}
 	
 	public void  verwijder(Vorm vorm){
+		if(!vormen.contains(vorm)){
+			throw new DomainException("De tekening bevat deze vorm niet");
+		}
+		else{
 		vormen.remove(vorm);
+		}
 	}
 	
 	
@@ -60,7 +68,7 @@ public class Tekening {
 	}
 	
 
-	public ArrayList<Vorm> getVormen() {
+	public List<Vorm> getVormen() {
 		return vormen;
 	}
 
@@ -70,14 +78,22 @@ public class Tekening {
 
 	@Override
 	public boolean equals(Object o){
-		boolean gelijk = false;
 		if (o instanceof Tekening){
 			Tekening t = (Tekening)o;
-			if(super.equals(t) && this.vormen == t.getVormen()){
-				gelijk = true;
+			for(Vorm vorm: vormen){
+				if(!((Tekening) o).getVormen().contains(vorm)){ 
+					return false;
+				}
 			}
+			if(this.getAantalVormen() == t.getAantalVormen()){
+				return true;
+			}
+			else{
+				return false;
+			}
+				
 		}
-		return gelijk;
+		return false;
 	}
 
 
