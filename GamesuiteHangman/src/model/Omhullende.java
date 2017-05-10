@@ -53,8 +53,9 @@ private int hoogte;
 	}
 	@Override
 	public String toString() {
-		return "Rechthoek: postitie: (" + linkerBovenhoek.getX() + ", " + linkerBovenhoek.getY() + ") - breedte: " + getBreedte() + " - hoohte: " + getHoogte() + "\n" +
-				"Omhullende: (" + linkerBovenhoek.getX() + ", " + linkerBovenhoek.getY() + ") - " + getBreedte() + " - " + getHoogte(); 
+		 return "Omhullende: " + linkerBovenhoek.toString() + " - " + breedte + " - " + hoogte;
+		//return "Rechthoek: postitie: (" + linkerBovenhoek.getX() + ", " + linkerBovenhoek.getY() + ") - breedte: " + getBreedte() + " - hoohte: " + getHoogte() + "\n" +
+			//	"Omhullende: (" + linkerBovenhoek.getX() + ", " + linkerBovenhoek.getY() + ") - " + getBreedte() + " - " + getHoogte(); 
 	}
 	@Override
 	public boolean equals(Object o) {

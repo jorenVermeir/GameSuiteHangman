@@ -102,6 +102,34 @@ public class TekeningTest {
 		huisMetSchouw.verwijder(schouwNietInTekening);
 		assertTrue(huis.equals(huisMetSchouw));
 	}
+	
+	@Test (expected = DomainException.class)
+	public void voegToe_gooit_exception_als_omhullende_minX_kleiner_is_dan_tekening_minX() {
+		Tekening huis = new Tekening("zonOutOfBounds");
+		Vorm zon = new Cirkel(new Punt(15, 45), 30);
+		huis.voegToe(zon);
+	}
+	
+	@Test (expected = DomainException.class)
+	public void voegToe_gooit_exception_als_omhullende_maxX_kleiner_is_dan_tekening_maxX() {
+		Tekening huis = new Tekening("zonOutOfBounds");
+		Vorm zon = new Cirkel(new Punt(385, 45), 30);
+		huis.voegToe(zon);
+	}
+	
+	@Test (expected = DomainException.class)
+	public void voegToe_gooit_exception_als_omhullende_minY_kleiner_is_dan_tekening_minY() {
+		Tekening huis = new Tekening("heuvelOutOfBounds");
+		Vorm heuvel = new Cirkel(new Punt(45, 15), 30);
+		huis.voegToe(heuvel);
+	}
+	
+	@Test (expected = DomainException.class)
+	public void voegToe_gooit_exception_als_omhullende_maxY_kleiner_is_dan_tekening_maxY() {
+		Tekening huis = new Tekening("heuvelOutOfBounds");
+		Vorm heuvel = new Cirkel(new Punt(45, 385), 30);
+		huis.voegToe(heuvel);
+	}
 
 
 	public Tekening createHuisMetSchouw() {
