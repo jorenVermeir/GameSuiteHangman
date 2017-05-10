@@ -53,9 +53,9 @@ public String toString() {
 	return "Rechthoek: positie: " + linkerBovenhoek.toString() + "- breedte: " + getBreedte() + "- hoogte: " + getHoogte();
 }
 @Override
-public String getOmhullende() {
-	// TODO Auto-generated method stub
-	return null;
+public Omhullende getOmhullende() {
+	Omhullende out = new Omhullende(getLinkerBovenhoek(), getBreedte(), getHoogte());
+	return out;
 }
 
 

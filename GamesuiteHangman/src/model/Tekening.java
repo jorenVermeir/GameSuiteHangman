@@ -5,10 +5,10 @@ import java.util.*;
 public class Tekening {
 
 	private String naam;
-	private int MIN_X;
-	private int MIN_Y;
-	private int MAX_X;
-	private int MAX_Y;
+	private int MIN_X = 0;
+	private int MIN_Y = 0;
+	private int MAX_X = 399;
+	private int MAX_Y = 399;
 	List <Vorm> vormen = new ArrayList<Vorm>();
 	
 	public Tekening( String naam){
@@ -27,12 +27,15 @@ public class Tekening {
 		return naam;
 	}
 	
-	public void  voegToe( Vorm vorm){
+	public void  voegToe(Vorm vorm){
 		if(vorm == null){
 			throw new DomainException("De vorm mag niet leeg zijn.");
 		}
 		else if( vormen.contains(vorm)){
 			throw new DomainException("De vorm komt al voor.");
+		}
+		if (vorm.getOmhullende().getMinX() < this.MIN_X || vorm.getOmhullende().getMaxX() > this.MAX_X || vorm.getOmhullende().getMinY() < this.MIN_Y || vorm.getOmhullende().getMaxY() > this.MAX_Y) {
+			throw new DomainException("Vorm ligt niet volledig op de tekening.");
 		}
 		vormen.add(vorm);
 	}

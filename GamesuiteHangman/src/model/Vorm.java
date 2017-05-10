@@ -13,6 +13,6 @@ public abstract class Vorm{
 		return "Vorm: ";
 	}
 	
-	abstract public String getOmhullende();
+	abstract public Omhullende getOmhullende();
 	
 }

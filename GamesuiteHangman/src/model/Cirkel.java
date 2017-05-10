@@ -51,12 +51,12 @@ public class Cirkel extends Vorm {
 		return punt;
 	}
 	@Override
-	public String getOmhullende() {
+	public Omhullende getOmhullende() {
 		Punt linkerbovenhoek = zoekLinkerbovenhoek();
 		int hoogte = radius*2;
 		int breedte = radius*2;
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
-		return omhullende.toString();
+		return omhullende;
 	}
 
 	

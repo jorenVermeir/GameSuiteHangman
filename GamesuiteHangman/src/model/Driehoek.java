@@ -90,13 +90,13 @@ public class Driehoek extends Vorm{
 	}
 
 	@Override
-	public String getOmhullende() {
+	public Omhullende getOmhullende() {
 		Punt linkerbovenhoek = new Punt(zoekLaagsteX(), zoekLaagsteY());
 		int hoogte = zoekHoogsteY() - zoekLaagsteY();
 		int breedte = zoekHoogsteX() - zoekLaagsteX();
 		
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
-		return omhullende.toString();
+		return omhullende;
 	}
 
 
