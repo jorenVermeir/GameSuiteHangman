@@ -54,8 +54,8 @@ public String toString() {
 }
 @Override
 public String getOmhullende() {
-	// TODO Auto-generated method stub
-	return null;
+	Omhullende omhullende = new Omhullende(linkerBovenhoek, breedte, hoogte);
+	return omhullende.toString();
 }
 
 
