@@ -8,7 +8,7 @@ import org.junit.Test;
 import model.HangMan;
 import model.Speler;
 import model.WoordenLijst;
-
+import model.DomainException;
 public class HangManTest {
 	
 	private HangMan hangman;
