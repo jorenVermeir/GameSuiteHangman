@@ -44,4 +44,10 @@ public class Cirkel extends Vorm{
 						+ ") - straal: " + radius;
 		return output;
 	}
+
+	@Override
+	public String getOmhullende() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

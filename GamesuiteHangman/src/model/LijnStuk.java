@@ -1,6 +1,6 @@
 package model;
 
-public class LijnStuk {
+public class LijnStuk extends Vorm{
 	
 	private Punt startPunt;
 	private Punt eindPunt;
@@ -42,6 +42,12 @@ public class LijnStuk {
 	@Override
 	public String toString() {
 		return "Lijn: startpunt: " + startPunt.toString() + " - eindpunt: " + eindPunt.toString();
+	}
+
+	@Override
+	public String getOmhullende() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
