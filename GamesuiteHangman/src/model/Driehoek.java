@@ -44,9 +44,57 @@ public class Driehoek extends Vorm{
 		}
 		return gelijk;
 	}
-	
+	private int zoekLaagsteY(){
+		int laagsteY = getHoekPunt1().getY();
+		if (laagsteY > getHoekPunt2().getY()) {
+			laagsteY = getHoekPunt2().getY();
+		}
+		if (laagsteY > getHoekPunt3().getY()) {
+			laagsteY = getHoekPunt3().getY();
+		}
+		return laagsteY;
+	}
+	private int zoekLaagsteX(){
+		int laagsteX = getHoekPunt1().getX();
+		if (laagsteX > getHoekPunt2().getX()) {
+			laagsteX = getHoekPunt2().getX();
+		}
+		if (laagsteX > getHoekPunt3().getX()) {
+			laagsteX = getHoekPunt3().getX();
+		}
+		return laagsteX;
+	}
+	private int zoekHoogsteY(){
+		int hoogsteY = getHoekPunt1().getY();
+		if (hoogsteY > getHoekPunt2().getY()) {
+			hoogsteY = getHoekPunt2().getY();
+		}
+		if (hoogsteY < getHoekPunt3().getY()) {
+			hoogsteY = getHoekPunt3().getY();
+		}
+		return hoogsteY;
+	}
+	private int zoekHoogsteX(){
+		int hoogsteX = getHoekPunt1().getY();
+		if (hoogsteX > getHoekPunt2().getY()) {
+			hoogsteX = getHoekPunt2().getY();
+		}
+		if (hoogsteX < getHoekPunt3().getY()) {
+			hoogsteX = getHoekPunt3().getY();
+		}
+		return hoogsteX;
+	}
 	@Override
 	public String toString(){
 		return "Driehoek: hoekpunt1" + getHoekPunt1() + " - hoekpunt2" + getHoekPunt2() + " + hoekpunt3" + getHoekPunt3();
+	}
+
+	@Override
+	public String getOmhullende() {
+		Punt linkerbovenhoek = new Punt(zoekLaagsteX(), zoekLaagsteY());
+		int hoogte = zoekHoogsteY() - zoekLaagsteY();
+		int breedte = zoekHoogsteX() - zoekLaagsteX();
+		
+		return "Omhullende: " + linkerbovenhoek.toString() + " - " + breedte + " - " + hoogte;
 	}
 }
