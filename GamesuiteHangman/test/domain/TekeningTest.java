@@ -7,6 +7,8 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+import model.*;
+
 public class TekeningTest {
 	private Vorm gebouw;
 	private Vorm dak;
@@ -139,4 +141,14 @@ public class TekeningTest {
 		return huisMetSchouwZonderDeur;
 	}
 
+	@Test 
+	public void voegToe_voegt_geldige_vorm_toe(){
+	Tekening t = new Tekening("t");
+	t.voegToe(dak);
+	assertTrue(t.bevat(dak));
+	
+	}
+	
+	@Test
+	public void voegToe_gooit_exception_bij_ongeldige_vorm()
 }
