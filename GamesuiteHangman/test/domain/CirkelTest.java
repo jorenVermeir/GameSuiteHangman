@@ -19,6 +19,7 @@ public class CirkelTest {
 			middelPunt = new Punt(5,10);
 			radius = 3;
 			cirkel = new Cirkel(middelPunt, radius);
+		
 		}
 		
 		@Test
@@ -66,6 +67,14 @@ public class CirkelTest {
 			Cirkel cirkel2 = new Cirkel(middelPunt, radius-1);
 			assertFalse(cirkel.equals(cirkel2));
 		}
+		
+		@Test
+		public void getOmhullende_geeft_juiste_waardes_cirkel_terug(){
+			cirkel = new Cirkel(middelPunt, radius);
+			Punt linkerbovenhoek = new Punt(2, 7);
+			assertEquals(cirkel.getOmhullende(), "Omhullende: " + linkerbovenhoek.toString() + " - " + 6 + " - " + 6);
+		}
+
 		
 		
 }

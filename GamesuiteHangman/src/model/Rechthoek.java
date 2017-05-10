@@ -52,5 +52,10 @@ public boolean equals(Object object){
 public String toString() {
 	return "Rechthoek: positie: " + linkerBovenhoek.toString() + "- breedte: " + getBreedte() + "- hoogte: " + getHoogte();
 }
+@Override
+public String getOmhullende() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 }
