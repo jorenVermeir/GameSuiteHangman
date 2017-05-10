@@ -1,6 +1,6 @@
 package model;
 
-public class Driehoek extends Vorm {
+public class Driehoek extends Vorm{
 
 	private Punt hoekPunt1;
 	private Punt hoekPunt2;
@@ -55,4 +55,6 @@ public class Driehoek extends Vorm {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 }

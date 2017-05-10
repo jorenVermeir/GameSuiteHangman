@@ -1,6 +1,6 @@
 package model;
 
-public class LijnStuk extends Vorm{
+public class LijnStuk extends Vorm {
 	
 	private Punt startPunt;
 	private Punt eindPunt;
@@ -49,5 +49,7 @@ public class LijnStuk extends Vorm{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 	
 }

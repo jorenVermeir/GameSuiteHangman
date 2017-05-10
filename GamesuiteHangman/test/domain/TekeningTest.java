@@ -149,6 +149,45 @@ public class TekeningTest {
 	
 	}
 	
-	@Test
-	public void voegToe_gooit_exception_bij_ongeldige_vorm()
+	@Test (expected = DomainException.class)
+	public void voegToe_gooit_exception_bij_ongeldige_vorm(){
+	Tekening t = new Tekening ("t");
+	t.voegToe(null);
+	}
+	
+	@Test (expected = DomainException.class)
+	public void voegToe_gooit_exception_als_vorm_al_in_tekening_zit(){
+		Tekening t = new Tekening ("t");
+		t.voegToe(dak);
+		t.voegToe(dak);
+	}
+	
+	@Test 
+	public void verwijder_verwijdert_vorm_uit_tekening(){
+		Tekening t = new Tekening("t");
+		t.voegToe(dak);
+		t.verwijder(dak);
+		assertFalse(t.bevat(dak));
+		}
+	
+	@Test (expected = DomainException.class)
+	public void verwijder_gooit_exception_als_vorm_niet_in_tekening_zit(){
+		Tekening t = new Tekening("t");
+		t.verwijder(dak);
+	}
+	
+	@Test 
+	public void getVorm_geeft_vorm_uit_tekening(){
+		Tekening t = new Tekening ("t");
+		t.voegToe(dak);
+		assertEquals(dak, t.getVorm(0));
+	}
+	
+	@Test (expected = DomainException.class)
+	public void getVorm_met_ongeldige_index_gooit_exception(){
+		Tekening t = new Tekening ("t");
+		t.getVorm(0);
+	}
+	
+	
 }

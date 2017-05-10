@@ -1,6 +1,6 @@
 package model;
 
-public class Rechthoek extends Vorm{
+public class Rechthoek extends Vorm {
 private int breedte;
 private int hoogte;
 private Punt linkerBovenhoek;
@@ -57,5 +57,7 @@ public String getOmhullende() {
 	// TODO Auto-generated method stub
 	return null;
 }
+
+
 
 }

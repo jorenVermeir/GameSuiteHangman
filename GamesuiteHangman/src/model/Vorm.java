@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Vorm {
+public abstract class Vorm{
 
 	@Override
 	public boolean equals(Object object) {
@@ -14,4 +14,5 @@ public abstract class Vorm {
 	}
 	
 	abstract public String getOmhullende();
+	
 }
