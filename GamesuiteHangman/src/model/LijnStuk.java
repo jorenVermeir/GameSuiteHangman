@@ -38,7 +38,34 @@ public class LijnStuk extends Vorm{
 		}
 		return false;
 	}
-	
+	private int zoekHoogsteX(){
+		if (getStartPunt().getX() > getEindPunt().getX()) {
+			return getStartPunt().getX();
+		}else{
+			return getEindPunt().getX();
+		}
+	}
+	private int zoekLaagsteX(){
+		if (getStartPunt().getX() < getEindPunt().getX()) {
+			return getStartPunt().getX();
+		}else{
+			return getEindPunt().getX();
+		}
+	}
+	private int zoekHoogsteY(){
+		if (getStartPunt().getY() > getEindPunt().getY()) {
+			return getStartPunt().getY();
+		}else{
+			return getEindPunt().getY();
+		}
+	}
+	private int zoekLaagsteY(){
+		if (getStartPunt().getY() < getEindPunt().getY()) {
+			return getStartPunt().getY();
+		}else{
+			return getEindPunt().getY();
+		}
+	}
 	@Override
 	public String toString() {
 		return "Lijn: startpunt: " + startPunt.toString() + " - eindpunt: " + eindPunt.toString();
@@ -46,8 +73,11 @@ public class LijnStuk extends Vorm{
 
 	@Override
 	public String getOmhullende() {
-		// TODO Auto-generated method stub
-		return null;
+		Punt linkerbovenhoek = new Punt(zoekLaagsteX(), zoekLaagsteY());
+		int hoogte = zoekHoogsteY() - zoekLaagsteY();
+		int breedte = zoekHoogsteX() - zoekLaagsteX();
+		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
+		return omhullende.toString();
 	}
 	
 }

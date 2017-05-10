@@ -95,6 +95,7 @@ public class Driehoek extends Vorm{
 		int hoogte = zoekHoogsteY() - zoekLaagsteY();
 		int breedte = zoekHoogsteX() - zoekLaagsteX();
 		
-		return "Omhullende: " + linkerbovenhoek.toString() + " - " + breedte + " - " + hoogte;
+		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
+		return omhullende.toString();
 	}
 }
