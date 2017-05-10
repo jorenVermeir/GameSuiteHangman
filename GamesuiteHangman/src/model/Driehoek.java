@@ -1,6 +1,6 @@
 package model;
 
-public class Driehoek {
+public class Driehoek extends Vorm {
 
 	private Punt hoekPunt1;
 	private Punt hoekPunt2;
@@ -48,5 +48,11 @@ public class Driehoek {
 	@Override
 	public String toString(){
 		return "Driehoek: hoekpunt1" + getHoekPunt1() + " - hoekpunt2" + getHoekPunt2() + " + hoekpunt3" + getHoekPunt3();
+	}
+
+	@Override
+	public String getOmhullende() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
