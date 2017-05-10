@@ -49,4 +49,10 @@ public class Driehoek extends Vorm{
 	public String toString(){
 		return "Driehoek: hoekpunt1" + getHoekPunt1() + " - hoekpunt2" + getHoekPunt2() + " + hoekpunt3" + getHoekPunt3();
 	}
+
+	@Override
+	public String getOmhullende() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
