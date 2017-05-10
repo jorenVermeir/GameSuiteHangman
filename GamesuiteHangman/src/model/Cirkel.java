@@ -44,10 +44,18 @@ public class Cirkel extends Vorm{
 						+ ") - straal: " + radius;
 		return output;
 	}
-
+	private Punt zoekLinkerbovenhoek(){
+		int linkerBovenX = getMiddelPunt().getX()-radius;
+		int linkerBovenY = getMiddelPunt().getY()-radius;
+		Punt punt=new Punt(linkerBovenX, linkerBovenY);
+		return punt;
+	}
 	@Override
 	public String getOmhullende() {
-		// TODO Auto-generated method stub
-		return null;
+		Punt linkerbovenhoek = zoekLinkerbovenhoek();
+		int hoogte = radius*2;
+		int breedte = radius*2;
+		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
+		return omhullende.toString();
 	}
 }
