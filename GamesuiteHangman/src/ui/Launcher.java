@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.JOptionPane;
 
-import model.Speler;
+import model.*;
 
 public class Launcher {
 
@@ -11,6 +11,10 @@ public class Launcher {
 		Speler speler = new Speler(naam);
 
 		JOptionPane.showMessageDialog(null, "... heeft als score: " + speler.getScore(), speler.getNaam(), JOptionPane.INFORMATION_MESSAGE);
+		int x = Integer.parseInt(JOptionPane.showInputDialog("x coordinaat van het punt:"));
+		int y = Integer.parseInt(JOptionPane.showInputDialog("y coordinaat van het punt:"));
+		Punt p = new Punt(x,y);
+		JOptionPane.showMessageDialog(null, "U heeft een correct punt aangemaakt: " + p.toString());
 	}
 
 }
