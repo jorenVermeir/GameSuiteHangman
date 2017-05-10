@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import model.HintWoord;
-
+import model.DomainException;
 
 
 public class HintWoordTest {
