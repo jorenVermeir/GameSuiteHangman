@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Tekening {
 
 	private String naam;
-	private int MIN_X;
-	private int MIN_Y;
-	private int MAX_X;
-	private int MAX_Y;
+	private int MIN_X = 0;
+	private int MIN_Y = 0;
+	private int MAX_X = 399;
+	private int MAX_Y = 399;
 	ArrayList <Vorm> vormen = new ArrayList<Vorm>();
 	
 	public Tekening( String naam){
