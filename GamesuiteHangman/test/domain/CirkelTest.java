@@ -68,12 +68,7 @@ public class CirkelTest {
 			assertFalse(cirkel.equals(cirkel2));
 		}
 		
-		@Test
-		public void getOmhullende_geeft_juiste_waardes_cirkel_terug(){
-			cirkel = new Cirkel(middelPunt, radius);
-			Punt linkerbovenhoek = new Punt(2, 7);
-			assertEquals(cirkel.getOmhullende(), "Omhullende: " + linkerbovenhoek.toString() + " - " + 6 + " - " + 6);
-		}
+		
 
 		
 		

@@ -3,7 +3,7 @@ package model;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Rechthoek extends Vorm implements Drawable{
+public class Rechthoek extends Vorm{
 private int breedte;
 private int hoogte;
 private Punt linkerBovenhoek;

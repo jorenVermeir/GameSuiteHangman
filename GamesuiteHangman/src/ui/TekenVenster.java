@@ -28,40 +28,10 @@ public class TekenVenster extends Canvas {
 		repaint();
 	}
 
-	public void paint(Graphics graphics) {
-		Graphics2D graphics2D = (Graphics2D) graphics;
-		graphics2D.setStroke(new BasicStroke(5));
-
-		for (Vorm vorm : tekening.getVormen()){
-			/*switch(vorm.getClass()){
-				case LijnStuk.class:
-
-			}*/
-			if(vorm instanceof LijnStuk){
-				LijnStuk ls = (LijnStuk) vorm;
-				graphics.drawLine(ls.getStartPunt().getX(),ls.getEindPunt().getX(),ls.getStartPunt().getY(),ls.getEindPunt().getY());
-			}
-			if(vorm instanceof Driehoek){
-				Driehoek dh = (Driehoek) vorm;
-				int[] xPoints = { dh.getHoekPunt1().getX(), dh.getHoekPunt2().getX(),
-						dh.getHoekPunt3().getX() };
-				int[] yPoints = { dh.getHoekPunt1().getY(), dh.getHoekPunt2().getY(),
-						dh.getHoekPunt3().getY() };
-				graphics.drawPolygon(xPoints, yPoints, 3);
-			}
-			if(vorm instanceof Rechthoek){
-				Rechthoek rh = (Rechthoek) vorm;
-				graphics.drawRect(rh.getLinkerBovenhoek().getX(),rh.getLinkerBovenhoek().getY(),rh.getBreedte(),rh.getHoogte());
-			}
-			if(vorm instanceof Cirkel){
-				Cirkel c = (Cirkel) vorm;
-				graphics.drawOval(c.getOmhullende().getMinX(), c.getOmhullende().getMinY(), c.getOmhullende().getBreedte(), c.getOmhullende().getHoogte());
-			}
-		}
-	}
-	/*
 	@Override
 	public void paint(Graphics graphics) {
+		
+		/*
 		Graphics2D graphics2D = (Graphics2D) graphics;
 		graphics2D.setStroke(new BasicStroke(5));
 
@@ -87,6 +57,8 @@ public class TekenVenster extends Canvas {
 				dak.getHoekPunt3().getX() };
 		int[] yPoints = { dak.getHoekPunt1().getY(), dak.getHoekPunt2().getY(),
 				dak.getHoekPunt3().getY() };
+		
 		graphics.drawPolygon(xPoints, yPoints, 3);
-	}*/
+		*/
+	}
 }

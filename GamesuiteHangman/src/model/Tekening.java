@@ -104,12 +104,11 @@ public class Tekening implements Drawable {
 
 	@Override
 	public String toString(){
-		return 	"De tekening met naam " + getNaam() + " bevat volgende " + getAantalVormen() + "vormen: " + this.getVormen();
+		return 	"De volgende vormen zitten in de tekening: " + this.getVormen(); 
 	}
 
 	@Override
 	public void teken(Graphics graphics) {
-		
 		for (Vorm vorm : vormen) {
 			vorm.teken(graphics);
 		}
