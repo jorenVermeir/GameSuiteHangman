@@ -3,7 +3,7 @@ package model;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class LijnStuk extends Vorm implements Drawable{
+public class LijnStuk extends Vorm{
 	
 	private Punt startPunt;
 	private Punt eindPunt;

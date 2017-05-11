@@ -1,8 +1,10 @@
 package model;
 
+
+import java.awt.Graphics;
 import java.util.*;
 
-public class Tekening {
+public class Tekening implements Drawable {
 
 	private String naam;
 	private int MIN_X = 0;
@@ -103,5 +105,14 @@ public class Tekening {
 	@Override
 	public String toString(){
 		return 	"De tekening met naam " + getNaam() + " bevat volgende " + getAantalVormen() + "vormen: " + this.getVormen();
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		
+		for (Vorm vorm : vormen) {
+			vorm.teken(graphics);
+		}
+		
 	}
 }
