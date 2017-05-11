@@ -8,12 +8,19 @@ import java.awt.Graphics2D;
 
 import model.*;
 
+import javax.swing.*;
+
 public class TekenVenster extends Canvas {
 
 	private static final long serialVersionUID = 1L;
 	private Tekening tekening = null;
 
 	public TekenVenster(Tekening tekening) {
+		JFrame f = new JFrame("Weather Wizard");
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.add(this);
+		f.pack();
+		f.setVisible(true);
 		this.setPreferredSize(new Dimension(400, 400));
 		setTekening(tekening);
 	}
@@ -33,10 +40,6 @@ public class TekenVenster extends Canvas {
 		graphics2D.setStroke(new BasicStroke(5));
 
 		for (Vorm vorm : tekening.getVormen()){
-			/*switch(vorm.getClass()){
-				case LijnStuk.class:
-
-			}*/
 			if(vorm instanceof LijnStuk){
 				LijnStuk ls = (LijnStuk) vorm;
 				graphics.drawLine(ls.getStartPunt().getX(),ls.getEindPunt().getX(),ls.getStartPunt().getY(),ls.getEindPunt().getY());
