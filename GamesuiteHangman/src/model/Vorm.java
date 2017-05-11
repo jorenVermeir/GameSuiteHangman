@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Vorm{
+public abstract class Vorm implements Drawable{
 
 	@Override
 	public boolean equals(Object object) {
