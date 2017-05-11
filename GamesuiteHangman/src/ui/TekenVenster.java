@@ -16,11 +16,6 @@ public class TekenVenster extends Canvas {
 	private Tekening tekening = null;
 
 	public TekenVenster(Tekening tekening) {
-		JFrame f = new JFrame("Weather Wizard");
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.add(this);
-		f.pack();
-		f.setVisible(true);
 		this.setPreferredSize(new Dimension(400, 400));
 		setTekening(tekening);
 	}
@@ -46,10 +41,8 @@ public class TekenVenster extends Canvas {
 			}
 			if(vorm instanceof Driehoek){
 				Driehoek dh = (Driehoek) vorm;
-				int[] xPoints = { dh.getHoekPunt1().getX(), dh.getHoekPunt2().getX(),
-						dh.getHoekPunt3().getX() };
-				int[] yPoints = { dh.getHoekPunt1().getY(), dh.getHoekPunt2().getY(),
-						dh.getHoekPunt3().getY() };
+				int[] xPoints = { dh.getHoekPunt1().getX(), dh.getHoekPunt2().getX(),dh.getHoekPunt3().getX() };
+				int[] yPoints = { dh.getHoekPunt1().getY(), dh.getHoekPunt2().getY(),dh.getHoekPunt3().getY() };
 				graphics.drawPolygon(xPoints, yPoints, 3);
 			}
 			if(vorm instanceof Rechthoek){
