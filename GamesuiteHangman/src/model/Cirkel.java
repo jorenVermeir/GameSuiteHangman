@@ -1,6 +1,9 @@
 package model;
 
-public class Cirkel extends Vorm {
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class Cirkel extends Vorm implements Drawable{
 	private Punt middelPunt;
 	private int radius;
 	
@@ -57,6 +60,13 @@ public class Cirkel extends Vorm {
 		int breedte = radius*2;
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
 		return omhullende;
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+			graphics.setColor(Color.MAGENTA);
+			graphics.fillOval(getMiddelPunt().getX()-getRadius(), 
+					getMiddelPunt().getY()-getRadius(), 2*getRadius(), 2*getRadius());
 	}
 
 	

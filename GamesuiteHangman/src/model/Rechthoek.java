@@ -1,6 +1,8 @@
 package model;
 
-public class Rechthoek extends Vorm {
+import java.awt.Graphics;
+
+public class Rechthoek extends Vorm implements Drawable{
 private int breedte;
 private int hoogte;
 private Punt linkerBovenhoek;
@@ -56,6 +58,11 @@ public String toString() {
 public Omhullende getOmhullende() {
 	Omhullende out = new Omhullende(getLinkerBovenhoek(), getBreedte(), getHoogte());
 	return out;
+}
+@Override
+public void teken(Graphics graphics) {
+	// TODO Auto-generated method stub
+	
 }
 
 
