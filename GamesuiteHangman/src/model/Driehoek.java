@@ -1,6 +1,8 @@
 package model;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public class Driehoek extends Vorm implements Drawable{
 
@@ -56,6 +58,7 @@ public class Driehoek extends Vorm implements Drawable{
 		}
 		return laagsteY;
 	}
+	
 	private int zoekLaagsteX(){
 		int laagsteX = getHoekPunt1().getX();
 		if (laagsteX > getHoekPunt2().getX()) {
@@ -102,8 +105,11 @@ public class Driehoek extends Vorm implements Drawable{
 	}
 
 	@Override
-	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
+	public void teken(Graphics graphics){
+		graphics.setColor(Color.orange);
+		int xPoints[] = {getHoekPunt1().getX(), getHoekPunt2().getX(), getHoekPunt3().getX()};
+		int yPoints[] = {getHoekPunt1().getY(), getHoekPunt2().getY(), getHoekPunt3().getY()};
+		graphics.drawPolygon(xPoints, yPoints, 3);
 		
 	}
 

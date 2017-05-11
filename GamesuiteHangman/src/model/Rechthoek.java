@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Rechthoek extends Vorm implements Drawable{
@@ -61,8 +62,8 @@ public Omhullende getOmhullende() {
 }
 @Override
 public void teken(Graphics graphics) {
-	// TODO Auto-generated method stub
-	
+	graphics.setColor(Color.pink);
+	graphics.drawRect(linkerBovenhoek.getX(), linkerBovenhoek.getY(), getBreedte(), getHoogte());
 }
 
 
