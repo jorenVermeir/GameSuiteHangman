@@ -83,7 +83,7 @@ public class LijnStuk extends Vorm{
 		return omhullende;
 	}
 
-	@Override
+	
 	public void teken(Graphics graphics) {
 		graphics.setColor(Color.RED);
 		graphics.drawLine(startPunt.getX(), startPunt.getY(), eindPunt.getX(), eindPunt.getY());

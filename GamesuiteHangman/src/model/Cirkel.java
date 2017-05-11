@@ -3,7 +3,7 @@ package model;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Cirkel extends Vorm implements Drawable{
+public class Cirkel extends Vorm{
 	private Punt middelPunt;
 	private int radius;
 	
@@ -62,7 +62,7 @@ public class Cirkel extends Vorm implements Drawable{
 		return omhullende;
 	}
 
-	@Override
+	
 	public void teken(Graphics graphics) {
 			graphics.setColor(Color.MAGENTA);
 			graphics.fillOval(getMiddelPunt().getX()-getRadius(), 
