@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class LijnStuk extends Vorm implements Drawable{
@@ -84,8 +85,8 @@ public class LijnStuk extends Vorm implements Drawable{
 
 	@Override
 	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
-		
+		graphics.setColor(Color.RED);
+		graphics.drawLine(startPunt.getX(), startPunt.getY(), eindPunt.getX(), eindPunt.getY());
 	}
 
 
