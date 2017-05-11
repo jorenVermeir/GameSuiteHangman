@@ -1,6 +1,8 @@
 package model;
 
-public class Driehoek extends Vorm{
+import java.awt.Graphics;
+
+public class Driehoek extends Vorm implements Drawable{
 
 	private Punt hoekPunt1;
 	private Punt hoekPunt2;
@@ -97,6 +99,12 @@ public class Driehoek extends Vorm{
 		
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
 		return omhullende;
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

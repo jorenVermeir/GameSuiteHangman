@@ -1,6 +1,8 @@
 package model;
 
-public class Cirkel extends Vorm {
+import java.awt.Graphics;
+
+public class Cirkel extends Vorm implements Drawable{
 	private Punt middelPunt;
 	private int radius;
 	
@@ -57,6 +59,12 @@ public class Cirkel extends Vorm {
 		int breedte = radius*2;
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
 		return omhullende;
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

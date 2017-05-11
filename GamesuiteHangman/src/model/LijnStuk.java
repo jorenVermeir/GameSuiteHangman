@@ -1,6 +1,8 @@
 package model;
 
-public class LijnStuk extends Vorm {
+import java.awt.Graphics;
+
+public class LijnStuk extends Vorm implements Drawable{
 	
 	private Punt startPunt;
 	private Punt eindPunt;
@@ -78,6 +80,12 @@ public class LijnStuk extends Vorm {
 		int breedte = zoekHoogsteX() - zoekLaagsteX();
 		Omhullende omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
 		return omhullende;
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
