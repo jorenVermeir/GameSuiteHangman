@@ -102,6 +102,6 @@ public class Tekening {
 
 	@Override
 	public String toString(){
-		return 	"De volgende vormen zitten in de tekening: " + this.getVormen(); 
+		return 	"De tekening met naam " + getNaam() + " bevat volgende " + getAantalVormen() + "vormen: " + this.getVormen();
 	}
 }
