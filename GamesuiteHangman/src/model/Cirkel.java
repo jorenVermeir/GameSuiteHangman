@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Cirkel extends Vorm implements Drawable{
@@ -63,8 +64,9 @@ public class Cirkel extends Vorm implements Drawable{
 
 	@Override
 	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
-		
+			graphics.setColor(Color.MAGENTA);
+			graphics.fillOval(getMiddelPunt().getX()-getRadius(), 
+					getMiddelPunt().getY()-getRadius(), 2*getRadius(), 2*getRadius());
 	}
 
 	
