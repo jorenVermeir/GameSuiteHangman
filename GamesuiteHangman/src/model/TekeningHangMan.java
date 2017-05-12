@@ -10,22 +10,20 @@ public class TekeningHangMan extends Tekening {
 		super("hangman");
 	}
 	
+	@Override
 	public String getNaam() {
 		return super.getNaam();
 	}
 	
+	@Override
 	public int getAantalOnzichtbaar() {
-		int aantal = 0;
-		for (Vorm vorm : super.getVormen()) {
-			if (!vorm.isZichtbaar()) {
-				aantal++;
-			}
-		}
-		return aantal;
+		return super.getAantalOnzichtbaar();
 	}
 	
 	public void zetVolgendeZichtbaar() {
-		
+		if (getAantalOnzichtbaar() < getAantalVormen()) {
+			throw new DomainException("Alle vormen zijn zichtbaar");
+		}
 		super.getVorm(getAantalOnzichtbaar() + 1).setZichtbaar(true);
 	}
 	
@@ -33,14 +31,17 @@ public class TekeningHangMan extends Tekening {
 		
 	}
 	
+	@Override
 	public void teken(Graphics graphics) {
 		
 	}
 	
+	@Override
 	public void verwijder(Vorm vorm) {
 		
 	}
 	
+	@Override
 	public void voegToe(Vorm vorm) {
 		
 	}
