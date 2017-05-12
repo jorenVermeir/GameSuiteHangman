@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
+import model.DomainException;
 import model.WoordenLijst;
 
 public class WoordenLijstTest {
@@ -64,5 +65,13 @@ public class WoordenLijstTest {
 
 		woordenlijstMetGeldigeWoorden.voegToe(woordAlInLijst);
 	}
+	
+	@Test
+	public void getRandomWoord_geeft_random_woord(){
+		String randomWoord = woordenlijstMetGeldigeWoorden.getRandomWoord();
+		assertTrue(geldigeWoorden.contains(randomWoord));
+	}
+	
+	
 
 }
