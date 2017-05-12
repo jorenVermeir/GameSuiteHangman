@@ -114,4 +114,15 @@ public class Tekening implements Drawable {
 		}
 		
 	}
+
+	public int getAantalOnzichtbaar() {
+		int aantal = 0;
+		for (Vorm vorm : getVormen()) {
+			if (!vorm.isZichtbaar()) {
+				aantal++;
+			}
+		}
+		return aantal;
+	
+	}
 }
