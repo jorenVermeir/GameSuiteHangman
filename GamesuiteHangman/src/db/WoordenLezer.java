@@ -9,15 +9,16 @@ import model.WoordenLijst;
 
 public class WoordenLezer {
 	private String bestandsNaam;
-	File woordenFile = new File(bestandsNaam);
-	WoordenLijst woorden;
+	
+	
 	
 	public WoordenLezer(String bestandsNaam){
 		this.bestandsNaam = bestandsNaam;
 	}
 	
 	public WoordenLijst lees(){
-		
+		File woordenFile = new File(bestandsNaam);
+		WoordenLijst woorden = new WoordenLijst();
 		try{
 			Scanner scannerFile = new Scanner(woordenFile);
 			while(scannerFile.hasNextLine()){
