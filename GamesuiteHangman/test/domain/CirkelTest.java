@@ -20,10 +20,7 @@ public class CirkelTest {
 			middelPunt = new Punt(5,10);
 			radius = 3;
 			cirkel = new Cirkel(middelPunt, radius);
-			Punt linkerbovenhoek = cirkel.zoekLinkerbovenhoek();
-			int hoogte = radius*2;
-			int breedte = radius*2;
-			omhullende = new Omhullende(linkerbovenhoek, breedte, hoogte);
+			
 		}
 		
 		@Test
@@ -73,6 +70,10 @@ public class CirkelTest {
 		}
 		@Test
 		public void getOmhullende_geeft_juiste_omhullende_terug(){
+			
+			int hoogte = radius*2;
+			int breedte = radius*2;
+			omhullende = new Omhullende(cirkel.zoekLinkerbovenhoek(), breedte, hoogte);
 			Omhullende nieuweO = cirkel.getOmhullende();
 			assertEquals(nieuweO.getBreedte(), omhullende.getBreedte());
 			assertEquals(nieuweO.getHoogte(), omhullende.getHoogte());
