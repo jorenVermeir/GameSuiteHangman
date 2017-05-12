@@ -60,7 +60,7 @@ public Omhullende getOmhullende() {
 	Omhullende out = new Omhullende(getLinkerBovenhoek(), getBreedte(), getHoogte());
 	return out;
 }
-@Override
+
 public void teken(Graphics graphics) {
 	graphics.setColor(Color.pink);
 	graphics.drawRect(linkerBovenhoek.getX(), linkerBovenhoek.getY(), getBreedte(), getHoogte());
