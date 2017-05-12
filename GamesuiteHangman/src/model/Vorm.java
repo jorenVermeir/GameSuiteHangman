@@ -1,6 +1,10 @@
 package model;
 
+import java.awt.Graphics;
+
 public abstract class Vorm implements Drawable{
+	
+	private boolean zichtbaar = true;
 
 	@Override
 	public boolean equals(Object object) {
@@ -14,5 +18,17 @@ public abstract class Vorm implements Drawable{
 	}
 	
 	abstract public Omhullende getOmhullende();
+	
+	public void teken(Graphics graphics) {
+		
+	}
+	
+	public boolean isZichtbaar() {
+		return false;
+	}
+	
+	public void setZichtbaar(boolean zichtbaar) {
+		
+	}
 	
 }
