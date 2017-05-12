@@ -5,11 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import model.HangMan;
-import model.Speler;
+import model.DomainException;
 import model.TekeningHangMan;
-import model.WoordenLijst;
-import ui.UiException;
 
 public class TekeningHangManTest {
 	
@@ -34,7 +31,7 @@ public class TekeningHangManTest {
 		assertEquals(tekening.getAantalVormen() - tekening.getAantalOnzichtbaar(), aantalZichtbaar + 1);
 	}
 	
-	@Test (expected = UiException.class)
+	@Test (expected = DomainException.class)
 	public void zetVolgendeZichtbaar_gooit_exception_als_alle_vormen_zichtbaar() {
 		while (tekening.getAantalOnzichtbaar() > 0) {
 			tekening.zetVolgendeZichtbaar();
@@ -49,7 +46,14 @@ public class TekeningHangManTest {
 		assertEquals(tekening.getAantalVormen(), 18);
 	}
 	
-	@Test
-	public void voegToe_gooit_exception
+	@Test (expected = DomainException.class)
+	public void voegToe_gooit_exception_als_argument_null() {
+		tekening.voegToe(null);
+	}
+	
+	@Test (expected = DomainException.class)
+	public void verwijder_gooit_exception_als_argument_null() {
+		tekening.verwijder(null);
+	}
 
 }
