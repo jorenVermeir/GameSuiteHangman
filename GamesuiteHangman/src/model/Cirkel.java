@@ -47,7 +47,7 @@ public class Cirkel extends Vorm{
 						+ ") - straal: " + radius;
 		return output;
 	}
-	private Punt zoekLinkerbovenhoek(){
+	public Punt zoekLinkerbovenhoek(){
 		int linkerBovenX = getMiddelPunt().getX()-radius;
 		int linkerBovenY = getMiddelPunt().getY()-radius;
 		Punt punt=new Punt(linkerBovenX, linkerBovenY);

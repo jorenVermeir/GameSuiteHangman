@@ -7,19 +7,20 @@ import org.junit.Test;
 
 import model.Cirkel;
 import model.DomainException;
+import model.Omhullende;
 import model.Punt;
 
 public class CirkelTest {
 		private Punt middelPunt;
 		private int radius;
 		private Cirkel cirkel;
-		
+		Omhullende omhullende;
 		@Before
 		public void setUp() throws Exception{
 			middelPunt = new Punt(5,10);
 			radius = 3;
 			cirkel = new Cirkel(middelPunt, radius);
-		
+			
 		}
 		
 		@Test
@@ -67,7 +68,17 @@ public class CirkelTest {
 			Cirkel cirkel2 = new Cirkel(middelPunt, radius-1);
 			assertFalse(cirkel.equals(cirkel2));
 		}
-		
+		@Test
+		public void getOmhullende_geeft_juiste_omhullende_terug(){
+			
+			int hoogte = radius*2;
+			int breedte = radius*2;
+			omhullende = new Omhullende(cirkel.zoekLinkerbovenhoek(), breedte, hoogte);
+			Omhullende nieuweO = cirkel.getOmhullende();
+			assertEquals(nieuweO.getBreedte(), omhullende.getBreedte());
+			assertEquals(nieuweO.getHoogte(), omhullende.getHoogte());
+			assertEquals(nieuweO.getLinkerBovenhoek(), omhullende.getLinkerBovenhoek());
+		}
 		
 
 		

@@ -8,6 +8,7 @@ import org.junit.Test;
 import model.Punt;
 import model.Rechthoek;
 import model.DomainException;
+import model.Omhullende;
 public class RechthoekTest {
 
 	private Punt linkerBovenhoek;
@@ -85,4 +86,12 @@ public class RechthoekTest {
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		assertFalse(rechthoek.equals(null));
 	}
+	/*@Test
+	public void getOmhullende_geeft_juiste_omhullende_terug(){
+	Omhullende omhullende = new Omhullende(rechthoek.getLinkerBovenhoek(), rechthoek.getBreedte(), rechthoek.getHoogte());
+	Omhullende testOmhullende = rechthoek.getOmhullende();
+	assertEquals(testOmhullende.getBreedte(), omhullende.getBreedte());
+	assertEquals(testOmhullende.getHoogte(), omhullende.getHoogte());
+	assertEquals(testOmhullende.getLinkerBovenhoek(), omhullende.getLinkerBovenhoek());
+	}*/
 }
